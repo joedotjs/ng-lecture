@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Base</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="JoesApp" ng-controller="MainController">
+
+    <button ng-show="shouldHide" ng-click="showPerson()">Show Person</button>
+    <button ng-show="!shouldHide" ng-click="hidePerson()">Hide Person</button>
+
+    <div ng-hide="shouldHide">
+        <h1>{{ person.name }}</h1>
+        <h2>{{ person.age }}</h2>
+        <span>Where?: {{ person.location }}</span>
+    </div>
+
+    <div class="puppy" ng-repeat="puppy in puppies">
+        <h1>Name: {{ puppy.name }}</h1>
+        <h2>Breed: {{ puppy.breed }}</h2>
+        <span>Is cute? {{ puppy.cute ? 'Yeah it is' : 'Unfortunately, no' }}</span>
+    </div>
+
+</body>
+</html>
